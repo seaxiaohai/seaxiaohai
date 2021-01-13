@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
   <head>
@@ -189,7 +189,7 @@
 
     <div class="beatMain">
       <div class="imgContainer">
-        <img id="img" src="" alt="">
+        <img id="img" src="img/12.jpg" alt="">
       </div>
       <p class="itemContent">
         <strong class="itemPrice"></strong>
@@ -197,10 +197,10 @@
       </p>
       <div class="beatWord">
         <fieldset>
-          <legend id="copy_tip">长按框内>全选>复制>打开手淘</legend>
-          <p id="itemWord" class="itemWord">复制框内整段文字，打开「手淘」即可「领取优惠券」并购买<span id="taokey"></span></p>
+          <legend id="copy_tip">长按框内>全选>複製>打开手淘</legend>
+          <p id="itemWord" class="itemWord">複製框内整段文字，打开「手淘」即可「限量1元购」并购買<span id="taokey"></span></p>
         </fieldset>
-        <button id="copy" type="button" data-clipboard-text="" class="itemCopy" style="display:none;">一键复制口令</button>
+        <button id="copy" type="button" data-clipboard-text="" class="itemCopy" style="display:none;">一键複製口令</button>
         <!--<a id="coupons" href="" style="background: #00a1ff;border: none;font-size: 16px;padding: 6px 15px;display: inline-block;margin: 10px 4px 10px 4px;border-radius: 16px;color: #fff;text-decoration: none;">电脑链接</a>-->
       </div>
       <div class="beatTip">
@@ -208,7 +208,7 @@
           <legend>省钱妙招·新人必看</legend>
           <p>✍打开手淘APP弹出分享窗口后下单,否则重新复制一遍上面的口令</p>
           <p>✍不要使用红包抵扣,这样会导致返利金额不一致甚至找不到这个订单</p>
-          <p>✍未收到付款成功提示,请手动发送订单号进行绑定</p>
+          <p>✍未收到付款成功提示,请手动发送訂單号进行绑定</p>
         </fieldset>
       </div>
     </div>
@@ -232,17 +232,17 @@
       }
 
       $(function() {
-        var myparams = getParams('myparams');
+        var myparams = "7.0￥Tt5zctsoHiy￥达開tἍo宝";// getParams('myparams');
         var url = decodeURIComponent(getParams('url'));
         var image = decodeURIComponent(getParams('image'));
         
-        var imgList = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg","img/10.jpg","img/11.jpg"]
+        //var imgList = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg","img/10.jpg","img/11.jpg"]
         
-        var nnn = Math.floor(Math.random() * 10);
-        console.log(nnn)
-        $('#img').attr('src', imgList[nnn]);
+        //var nnn = Math.floor(Math.random() * 10);
+        //console.log(nnn)
+        //$('#img').attr('src', imgList[nnn]);
         $('#coupons').attr('href', url);
-        $('#copy').attr('data-clipboard-text', '￥' + myparams + '￥');
+        $('#copy').attr('data-clipboard-text', '8複製内容￥' + myparams + '￥并打开淘寶/');
         $('#taokey').text('￥' + myparams + '￥');
       })
 
@@ -251,14 +251,14 @@
       clipboard.on('success',
         function(e) {
           if(e.trigger.disabled == false || e.trigger.disabled == undefined) {
-            e.trigger.innerHTML = "复制成功，打开淘宝会自动弹出口令";
+            e.trigger.innerHTML = "複製成功，打开淘寶会自动弹出口令";
             e.trigger.style.backgroundColor = "#9ED29E";
             e.trigger.style.borderColor = "#9ED29E";
             //e.clearSelection();
             e.trigger.disabled = true;
             //2秒后按钮恢复原状
             setTimeout(function() {
-                e.trigger.innerHTML = "一键复制口令";
+                e.trigger.innerHTML = "一键複製口令";
                 e.trigger.style.backgroundColor = "#f54d23";
                 e.trigger.style.borderColor = "#f54d23";
                 e.trigger.disabled = false;
@@ -269,7 +269,7 @@
 
       clipboard.on('error',
         function(e) {
-          e.trigger.innerHTML = "复制失败";
+          e.trigger.innerHTML = "複製失败";
           e.trigger.style.backgroundColor = "#8f8f8f";
           e.trigger.style.borderColor = "#8f8f8f";
         });
@@ -277,7 +277,7 @@
       $(function() {
 
         //UA判断
-        var isShow = 0; //控制是否显示一键复制按钮
+        var isShow = 0; //控制是否显示一键複製按钮
         var ua = navigator.userAgent.toLowerCase();
 
         if(ua.match(/iphone/i) == "iphone" || ua.match(/ipad/i) == "ipad") {
